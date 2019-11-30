@@ -2,18 +2,20 @@
 
 ## Installation
 ```bash
-$ npm i vue-neditor-wrap
+$ npm i @ctsy/neditor
 ```
 
 ## Quick Start
 
-1. 下载[官方资源文件](https://www.notadd.com/download/neditor/Neditor-next-master.tar.xz)
+1. 入口文件中引入文件
 
-    > 下载完成后放在本地public下，命名为NEditor的文件夹下
+    ```html
+    <script src="https://npm.tansuyun.cn/neditor@tsy/neditor.min.js"></script>
+    ```
 
 2. 引入`VueNeditorWrap`组件
 
-    `import VueNeditorWrap from 'vue-neditor-wrap'`
+    `import VueNeditorWrap from '@ctsy/neditor'`
 
 3. 注册组件
     ```js
@@ -29,10 +31,6 @@ $ npm i vue-neditor-wrap
     data () {
         return {
             myConfig: {
-                // 如果需要上传功能,找后端小伙伴要服务器接口地址
-                serverUrl: '/api/web/upload/ueditor',
-                // 你的UEditor资源存放的路径,相对于打包后的index.html
-                UEDITOR_HOME_URL: '/NEditor/',
                 // 编辑器不自动被内容撑高
                 autoHeightEnabled: false,
                 // 初始容器高度
@@ -48,9 +46,9 @@ $ npm i vue-neditor-wrap
     ```
     > 至此你已经可以在页面中看到一个初始化之后的`NEditor`了，并且它已经成功和数据绑定了！
 
-    ![](https://raw.githubusercontent.com/caiya/imgs/master/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181124115713.png)
+    ![](https://raw.githubusercontent.com/c-tsy/imgs/master/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181124115713.png)
 
-    ![](https://raw.githubusercontent.com/caiya/imgs/master/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181124114504.png)
+    ![](https://raw.githubusercontent.com/c-tsy/imgs/master/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20181124114504.png)
 
 ## License
 

@@ -32,7 +32,7 @@ export default {
       isReady: false, // 实例是否已经ready
       readyValue: "", // ready之后给编辑器设置的值
       defaultConfig: {
-        UEDITOR_HOME_URL: "./public/NEditor/",
+        // UEDITOR_HOME_URL: "./public/NEditor/",
         enableAutoSave: false
       }
     };
@@ -136,12 +136,19 @@ export default {
           //   resolve();
           // });
           const that = this;
-          that._loadJquery().then(() => that._loadParse()).then(() => that._loadConfig()).then(() => that._loadCore()).then(() => that._loadService()).then(() => {
-            window.loadEnv.emit("scriptsLoaded");
-            resolve();
-          }).catch(err => {
-            console.error(err);
-          })
+          that
+            ._loadJquery()
+            .then(() => that._loadParse())
+            .then(() => that._loadConfig())
+            .then(() => that._loadCore())
+            .then(() => that._loadService())
+            .then(() => {
+              window.loadEnv.emit("scriptsLoaded");
+              resolve();
+            })
+            .catch(err => {
+              console.error(err);
+            });
         });
       }
     },
@@ -180,7 +187,8 @@ export default {
       return new Promise((resolve, reject) => {
         let coreScript = document.createElement("script");
         coreScript.type = "text/javascript";
-        coreScript.src = this.mixedConfig.UEDITOR_HOME_URL + "neditor.service.js";
+        coreScript.src =
+          this.mixedConfig.UEDITOR_HOME_URL + "neditor.service.js";
         document.getElementsByTagName("head")[0].appendChild(coreScript);
         coreScript.onload = function() {
           resolve();
@@ -199,12 +207,13 @@ export default {
         };
       });
     },
-	_loadJquery() {
+    _loadJquery() {
       return new Promise((resolve, reject) => {
         let coreScript = document.createElement("script");
         coreScript.type = "text/javascript";
         coreScript.src =
-          this.mixedConfig.UEDITOR_HOME_URL + "third-party/jquery-1.10.2.min.js";
+          this.mixedConfig.UEDITOR_HOME_URL +
+          "third-party/jquery-1.10.2.min.js";
         document.getElementsByTagName("head")[0].appendChild(coreScript);
         coreScript.onload = function() {
           resolve();
@@ -219,8 +228,7 @@ export default {
         }
         let coreScript = document.createElement("script");
         coreScript.type = "text/javascript";
-        coreScript.src =
-          this.mixedConfig.UEDITOR_HOME_URL + "neditor.all.js";
+        coreScript.src = this.mixedConfig.UEDITOR_HOME_URL + "neditor.all.js";
         document.getElementsByTagName("head")[0].appendChild(coreScript);
         coreScript.onload = function() {
           resolve();
@@ -251,9 +259,7 @@ export default {
   watch: {
     value: {
       handler(value) {
-        
-          this.editor ? this._setContent(value) : this._beforeInitEditor(value);
-        
+        this.editor ? this._setContent(value) : this._beforeInitEditor(value);
       },
       immediate: true
     }

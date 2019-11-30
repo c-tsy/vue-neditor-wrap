@@ -1,6 +1,6 @@
 {
-  "name": "vue-neditor-wrap",
-  "version": "1.0.5",
+  "name": "@ctsy/neditor",
+  "version": "1.0.0",
   "description": "Vue + NEditor + v-model双向绑定",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caiya/vue-neditor-wrap.git"
+    "url": "git+https://github.com/c-tsy/vue-neditor-wrap.git"
   },
   "keywords": [
     "ueditor",
@@ -24,9 +24,9 @@
   "author": "晁州",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/caiya/vue-neditor-wrap/issues"
+    "url": "https://github.com/c-tsy/vue-neditor-wrap/issues"
   },
-  "homepage": "https://github.com/caiya/vue-neditor-wrap#readme",
+  "homepage": "https://github.com/c-tsy/vue-neditor-wrap#readme",
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
