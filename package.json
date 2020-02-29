@@ -8,6 +8,11 @@
     "lint": "eslint lib/*",
     "fix": "eslint lib/* --fix"
   },
+  "files": [
+    "index.js",
+    "lib/index.vue",
+    "assets/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/c-tsy/vue-neditor-wrap.git"
